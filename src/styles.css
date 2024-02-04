@@ -3,25 +3,22 @@ html {
   }
 
 .breed-select {
+    font-size: 20px;
+    padding: 8px 12px;
     margin-bottom: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .error {
-    display: none;
-    color: red;
-  }
-
-  .loader {
+  body .loader {
     display: none;
     color: royalblue;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
+
   .loader-icon {
     width: 48px;
     height: 48px;
@@ -60,4 +57,9 @@ html {
 
   .cat-info p {
     margin: 5px 0;
+  }
+
+  .error {
+    display: none;
+    color: red;
   }
