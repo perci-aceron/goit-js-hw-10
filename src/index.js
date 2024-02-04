@@ -13,9 +13,12 @@ const catInfo = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');
 const error = document.querySelector('.error');
 
+// Access the original select element from SlimSelect
+const slimSelectElement = breedSelect.data.select;
+
 // Add event listener for SlimSelect change event
-breedSelect.slim.on('change', info => {
-  const selectedBreedId = info.value();
+slimSelectElement.addEventListener('change', event => {
+  const selectedBreedId = event.target.value;
   fetchCatByBreed(apiKey, selectedBreedId);
 });
 
