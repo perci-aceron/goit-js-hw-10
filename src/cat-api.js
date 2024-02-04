@@ -57,7 +57,6 @@ export const fetchCatByBreed = (apiKey, breedId) => {
       .then(response => {
         const catData = response.data[0];
         const breedDetails = catData.breeds[0];
-        const { name, description, temperament } = breedDetails;
 
         // Create a new image element
         const catImage = document.createElement('img');
@@ -70,9 +69,21 @@ export const fetchCatByBreed = (apiKey, breedId) => {
         catInfo.appendChild(catImage);
 
         // Update UI with cat information
-        document.querySelector('.cat-name').innerText = name;
-        document.querySelector('.cat-description').innerText = description;
-        document.querySelector('.cat-temperament').innerText = temperament;
+        const catNameElement = document.createElement('p');
+        catNameElement.className = 'cat-name';
+        catNameElement.innerText = breedDetails.name;
+
+        const catDescriptionElement = document.createElement('p');
+        catDescriptionElement.className = 'cat-description';
+        catDescriptionElement.innerText = breedDetails.description;
+
+        const catTemperamentElement = document.createElement('p');
+        catTemperamentElement.className = 'cat-temperament';
+        catTemperamentElement.innerText = breedDetails.temperament;
+
+        catInfo.appendChild(catNameElement);
+        catInfo.appendChild(catDescriptionElement);
+        catInfo.appendChild(catTemperamentElement);
 
         loader.style.display = 'none';
         catInfo.style.display = 'block';
