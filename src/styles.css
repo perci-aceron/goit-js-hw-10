@@ -14,9 +14,9 @@ html {
   body .loader {
     display: none;
     color: royalblue;
-    /* top: 10%;
+    /* top: 10%; */
     left: 50%;
-    transform: translate(-50%, -50%); */
+    /* transform: translate(-50%, -50%); */
   }
 
   .loader-icon {
@@ -39,7 +39,7 @@ html {
     }
   }
   .cat-name {
-    font-size: 22px;
+    font-size: 1.2em;
   }
   .cat-info {
     display: none;
@@ -51,7 +51,7 @@ html {
   }
 
   .cat-image {
-    max-width: 75%;
+    max-width: 50%;
     height: auto;
     margin-bottom: 10px;
   }
