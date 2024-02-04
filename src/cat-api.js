@@ -1,8 +1,7 @@
-// cat-api.js
-
 import axios from 'axios';
 
-axios.defaults.headers.common['x-api-key'] = 'your key';
+axios.defaults.headers.common['x-api-key'] =
+  live_6h4QUxeTfC4qVpMQNe7IsH0bXSFGfs90JToDMxK4F4XoDf10nSigsOxUm0TBw1hS;
 
 export const fetchBreeds = () => {
   const breedSelect = document.querySelector('.breed-select');
@@ -51,9 +50,6 @@ export const fetchCatByBreed = breedId => {
       .then(response => {
         const catData = response.data[0];
         const { name, description, temperament } = catData.breeds[0];
-
-        // Update UI with cat information
-        // Assuming you have elements in the cat-info block for name, description, and temperament
         document.querySelector('.cat-name').innerText = name;
         document.querySelector('.cat-description').innerText = description;
         document.querySelector('.cat-temperament').innerText = temperament;
