@@ -20,7 +20,7 @@ fetchBreeds(apiKey)
   })
   .catch(err => {
     console.error('Error fetching breeds:', err);
-    Notiflix.Notify.Failure('Oops! Something went wrong fetching breeds.');
+    Notiflix.Notify.failure('Oops! Something went wrong fetching breeds.');
   })
   .finally(() => {
     loader.style.display = 'none';
