@@ -14,9 +14,9 @@ html {
   body .loader {
     display: none;
     color: royalblue;
-    top: 10%;
+    /* top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
   }
 
   .loader-icon {
@@ -38,8 +38,9 @@ html {
       transform: rotate(360deg);
     }
   }
-  
-
+  .cat-name {
+    font-size: 22px;
+  }
   .cat-info {
     display: none;
     text-align: center;
