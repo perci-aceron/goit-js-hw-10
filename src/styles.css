@@ -11,12 +11,13 @@ html {
     margin-right: auto;
   }
 
-  body .loader {
+  .loader {
     display: none;
     color: royalblue;
-    /* top: 10%; */
+    position: fixed;
+    top: 20%;
     left: 50%;
-    /* transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
   }
 
   .loader-icon {
@@ -37,6 +38,13 @@ html {
     100% {
       transform: rotate(360deg);
     }
+  }
+  .error {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .cat-name {
     font-size: 1.2em;

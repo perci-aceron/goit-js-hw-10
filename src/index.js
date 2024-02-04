@@ -9,13 +9,11 @@ const catInfo = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');
 const error = document.querySelector('.error');
 
-// Add event listener for select element change event
 breedSelect.addEventListener('change', event => {
   const selectedBreedId = event.target.value;
   fetchCatByBreed(apiKey, selectedBreedId);
 });
 
-// Fetch breeds on page load
 fetchBreeds(apiKey)
   .then(() => {
     error.style.display = 'none';
@@ -25,5 +23,5 @@ fetchBreeds(apiKey)
     Notiflix.Notify.Failure('Oops! Something went wrong fetching breeds.');
   })
   .finally(() => {
-    loader.style.display = 'none'; // Hide loader regardless of success or failure
+    loader.style.display = 'none';
   });

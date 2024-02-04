@@ -1,5 +1,3 @@
-// cat-api.js
-
 import axios from 'axios';
 
 export const fetchBreeds = apiKey => {
@@ -58,17 +56,14 @@ export const fetchCatByBreed = (apiKey, breedId) => {
         const catData = response.data[0];
         const breedDetails = catData.breeds[0];
 
-        // Create a new image element
         const catImage = document.createElement('img');
         catImage.className = 'cat-image';
         catImage.alt = 'Cat Image';
         catImage.src = catData.url;
 
-        // Append the image to the .cat-info div
-        catInfo.innerHTML = ''; // Clear previous content
+        catInfo.innerHTML = '';
         catInfo.appendChild(catImage);
 
-        // Update UI with cat information
         const catNameElement = document.createElement('p');
         catNameElement.className = 'cat-name';
         catNameElement.innerText = breedDetails.name;
