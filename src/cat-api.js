@@ -1,9 +1,8 @@
+// cat-api.js
+
 import axios from 'axios';
 
-axios.defaults.headers.common['x-api-key'] =
-  live_6h4QUxeTfC4qVpMQNe7IsH0bXSFGfs90JToDMxK4F4XoDf10nSigsOxUm0TBw1hS;
-
-export const fetchBreeds = () => {
+export const fetchBreeds = apiKey => {
   const breedSelect = document.querySelector('.breed-select');
   const loader = document.querySelector('.loader');
   const error = document.querySelector('.error');
@@ -14,7 +13,11 @@ export const fetchBreeds = () => {
 
   return new Promise((resolve, reject) => {
     axios
-      .get('https://api.thecatapi.com/v1/breeds')
+      .get('https://api.thecatapi.com/v1/breeds', {
+        headers: {
+          'x-api-key': apiKey,
+        },
+      })
       .then(response => {
         const breeds = response.data;
         breeds.forEach(breed => {
@@ -35,7 +38,7 @@ export const fetchBreeds = () => {
   });
 };
 
-export const fetchCatByBreed = breedId => {
+export const fetchCatByBreed = (apiKey, breedId) => {
   const catInfo = document.querySelector('.cat-info');
   const loader = document.querySelector('.loader');
   const error = document.querySelector('.error');
@@ -46,10 +49,15 @@ export const fetchCatByBreed = breedId => {
 
   return new Promise((resolve, reject) => {
     axios
-      .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
+      .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`, {
+        headers: {
+          'x-api-key': apiKey,
+        },
+      })
       .then(response => {
         const catData = response.data[0];
         const { name, description, temperament } = catData.breeds[0];
+
         document.querySelector('.cat-name').innerText = name;
         document.querySelector('.cat-description').innerText = description;
         document.querySelector('.cat-temperament').innerText = temperament;
