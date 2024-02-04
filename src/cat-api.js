@@ -54,7 +54,7 @@ export const fetchCatByBreed = (apiKey, breedId) => {
       })
       .then(response => {
         const catData = response.data[0];
-        const { name, description, temperament, url } = catData.breeds[0];
+        const { name, description, temperament, url } = catData;
 
         document.querySelector('.cat-name').innerText = name;
         document.querySelector('.cat-description').innerText = description;
